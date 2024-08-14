@@ -1,7 +1,4 @@
-# Task 1: Write a function that lets the user add items 
-# to a list.
-
-# Answer:
+# Task 1: Write a function that lets the user add items to a list.
 def add_item(shopping_list):
     """
     Function to add an item to the shopping list.
@@ -14,8 +11,6 @@ def add_item(shopping_list):
 
 
 # Task 2: Include a function to remove items from the list.
-
-# Answer:
 def remove_item(shopping_list):
     """
     Function to remove an item from the shopping list.
@@ -30,10 +25,7 @@ def remove_item(shopping_list):
         print(f"{item} is not in the list.")  # Inform the user if the item is not found
 
 
-# Task 3: Add a function that prints out the entire list in 
-# a formatted way.
-
-# Answer:
+# Task 3: Add a function that prints out the entire list in a formatted way.
 def print_list(shopping_list):
     """
     Function to print the entire shopping list in a formatted way.
@@ -44,3 +36,35 @@ def print_list(shopping_list):
     for item in shopping_list:
         print(f"- {item}")  # Print each item in the list
     print()  # Add a blank line for better readability
+
+
+# UPDATE: Created a main function to handle user interaction in a while loop.
+def main():
+    shopping_list = []  # Initialize an empty shopping list
+
+    while True:
+        # Display options to the user
+        print("\nOptions:")
+        print("1. Add item")
+        print("2. Remove item")
+        print("3. Print list")
+        print("4. Exit")
+        choice = input("Enter your choice: ")
+
+        # Call the appropriate function based on user choice
+        if choice == '1':
+            add_item(shopping_list)
+        elif choice == '2':
+            remove_item(shopping_list)
+        elif choice == '3':
+            print_list(shopping_list)
+        elif choice == '4':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+# Entry point of the program
+if __name__ == "__main__":
+    main()
